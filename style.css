@@ -1,0 +1,110 @@
+    @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap");
+    :root {
+    --bg: #080810;
+    --accent: #00ffcc;
+    --red: #ff3355;
+    --gold: #ffcc00;
+    --dim: #334455;
+    --text: #ccdde8;
+    --ammo: #ff9900;
+    }
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Space Mono", monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    user-select: none;
+    }
+    #wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 860px;
+    padding: 0 16px;
+    }
+    h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(2.2rem, 6vw, 4.2rem);
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-shadow: 0 0 28px rgba(0, 255, 204, 0.5);
+    line-height: 1;
+    }
+    #hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--dim);
+    padding: 0 2px;
+    }
+    #ammoBar {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    }
+    .bullet-pip {
+    width: 7px;
+    height: 14px;
+    border-radius: 2px 2px 1px 1px;
+    background: var(--ammo);
+    box-shadow: 0 0 6px rgba(255, 153, 0, 0.5);
+    }
+    .bullet-pip.empty {
+    background: #1a1a2e;
+    box-shadow: none;
+    }
+    #gameCanvas {
+    display: block;
+    border: 1px solid #1a2233;
+    border-radius: 4px;
+    background: var(--bg);
+    width: 100%;
+    max-width: 860px;
+    cursor: pointer;
+    touch-action: none;
+    }
+    #hint {
+    font-size: 0.62rem;
+    letter-spacing: 0.09em;
+    color: #334455;
+    text-align: center;
+    line-height: 1.8;
+    }
+    #hint kbd {
+    background: #0e1020;
+    border: 1px solid #223;
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-family: inherit;
+    font-size: inherit;
+    color: #99aabb;
+    }
+    body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0, 0, 0, 0.025) 3px,
+        rgba(0, 0, 0, 0.025) 4px
+    );
+    pointer-events: none;
+    z-index: 100;
+    }
